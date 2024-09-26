@@ -34,6 +34,7 @@ impl<const N_DIM: usize> State<N_DIM> {
         Self { rng, arr, proposal_distribution }
     }
 
+
     pub fn take_step(&mut self) {
         let binding = self.proposal_distribution.sample(&mut self.rng);
         let proposal= binding.as_slice();
